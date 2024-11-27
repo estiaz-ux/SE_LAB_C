@@ -1,5 +1,4 @@
 # Python program to swap two variables
-
 x = 5
 y = 10
 
