@@ -1,12 +1,9 @@
 @charset "UTF-8";
-
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
-
 Copyright (c) 2015 Daniel Eden
 */
-
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -41,7 +38,6 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-duration: .75s;
   animation-duration: .75s;
 }
-
 .animated.flipOutX,
 .animated.flipOutY {
   -webkit-animation-duration: .75s;
@@ -135,9 +131,7 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: flash;
   animation-name: flash;
 }
-
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
-
 @-webkit-keyframes pulse {
   from {
     -webkit-transform: scale3d(1, 1, 1);
@@ -255,7 +249,6 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
-
 @-webkit-keyframes shake {
   from, to {
     -webkit-transform: translate3d(0, 0, 0);
@@ -289,7 +282,6 @@ Copyright (c) 2015 Daniel Eden
     transform: translate3d(10px, 0, 0);
   }
 }
-
 .shake {
   -webkit-animation-name: shake;
   animation-name: shake;
@@ -414,9 +406,7 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: tada;
   animation-name: tada;
 }
-
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
-
 @-webkit-keyframes wobble {
   from {
     -webkit-transform: none;
@@ -626,7 +616,6 @@ Copyright (c) 2015 Daniel Eden
     transform: scale3d(1, 1, 1);
   }
 }
-
 @keyframes bounceIn {
   from, 20%, 40%, 60%, 80%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -671,7 +660,6 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: bounceIn;
   animation-name: bounceIn;
 }
-
 @-webkit-keyframes bounceInDown {
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -790,13 +778,11 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: translate3d(-3000px, 0, 0);
     transform: translate3d(-3000px, 0, 0);
   }
-
   60% {
     opacity: 1;
     -webkit-transform: translate3d(25px, 0, 0);
     transform: translate3d(25px, 0, 0);
   }
-
   75% {
     -webkit-transform: translate3d(-10px, 0, 0);
     transform: translate3d(-10px, 0, 0);
@@ -1301,7 +1287,6 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: translate3d(-50px, 0, 0);
     transform: translate3d(-50px, 0, 0);
   }
-
   to {
     opacity: 1;
     visibility: visible;
@@ -2667,9 +2652,7 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: hinge;
   animation-name: hinge;
 }
-
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
-
 @-webkit-keyframes rollIn {
   from {
     opacity: 0;
@@ -2702,9 +2685,7 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: rollIn;
   animation-name: rollIn;
 }
-
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
-
 @-webkit-keyframes rollOut {
   from {
     opacity: 1;
@@ -3363,7 +3344,6 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-
   to {
     visibility: hidden;
     -webkit-transform: translate3d(0, -100%, 0);
