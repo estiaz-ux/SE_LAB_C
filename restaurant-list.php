@@ -24,7 +24,6 @@ if (isset($_POST['find'])) {
         </div>
       </div>
 
-
     </section>
 
   <div class="ftco-section-reservation"   >
@@ -66,8 +65,6 @@ if (isset($_POST['find'])) {
         </div>
       </div>
     </div>
-
-    
 
     <section class="ftco-section bg-light">
       <div class="container">
@@ -123,8 +120,7 @@ if (isset($_POST['find'])) {
 
     <?php include 'template/footer.php'; ?>
     
-    <?php include 'template/script.php'; ?>
-    
+    <?php include 'template/script.php'; ?>  
   </body>
 </html>
 <?php 
