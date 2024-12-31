@@ -4,7 +4,6 @@
     
     <?php include 'template/nav-bar.php'; ?>
     <!-- END nav -->
-    
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url('images/bg_1.jpg');">
         <div class="overlay"></div>
