@@ -1,13 +1,10 @@
 <!-- restaurant-list.php -->
-
 <?php 
 if (isset($_POST['find'])) {
   $area_id = $_POST['area'];
-
   include 'dbCon.php';
   include 'template/header.php'; ?>
   <body>
-    
    <?php include 'template/nav-bar.php'; ?>
     <!-- END nav -->
     <section class="home-slider owl-carousel" >
@@ -22,7 +19,6 @@ if (isset($_POST['find'])) {
           </div>
         </div>
       </div>
-
     </section>
 
   <div class="ftco-section-reservation"   >
@@ -31,7 +27,6 @@ if (isset($_POST['find'])) {
           <div class="col-md-12 reservation pt-5 px-5">
               <p style="font-size: 20px; color: #000;font-weight: bold;margin-top: -30px">Make a Reservation</p>
             <div class="block-17" style="min-height: 100px;">
-              
               <form action="restaurant-list.php" method="POST" class="d-block d-lg-flex">
                 <div class="fields d-block d-lg-flex">
                   <p style="font-size: 20px;color: #000">Country</p>
@@ -114,7 +109,6 @@ if (isset($_POST['find'])) {
         </div>
       </div>
     </section>
-
     <?php include 'template/instagram.php'; ?>
     <?php include 'template/footer.php'; ?>
     <?php include 'template/script.php'; ?>  
@@ -122,6 +116,5 @@ if (isset($_POST['find'])) {
 </html>
 <?php 
   }else{
-
   }
  ?>
