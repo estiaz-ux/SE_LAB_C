@@ -4,13 +4,12 @@
 if (isset($_POST['find'])) {
   $area_id = $_POST['area'];
 
-                        include 'dbCon.php';
+  include 'dbCon.php';
   include 'template/header.php'; ?>
   <body>
     
    <?php include 'template/nav-bar.php'; ?>
     <!-- END nav -->
-    
     <section class="home-slider owl-carousel" >
       <div class="slider-item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -117,9 +116,7 @@ if (isset($_POST['find'])) {
     </section>
 
     <?php include 'template/instagram.php'; ?>
-
     <?php include 'template/footer.php'; ?>
-    
     <?php include 'template/script.php'; ?>  
   </body>
 </html>
