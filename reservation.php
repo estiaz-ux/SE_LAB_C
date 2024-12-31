@@ -1,3 +1,4 @@
+<!-- reservation.php -->
 <?php include 'template/header.php';
 
  include 'dbCon.php';
@@ -11,7 +12,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
   <body>
     
    <?php include 'template/nav-bar.php'; ?>
-    
+    <!-- END nav -->
     <section class="home-slider owl-carousel"  >
       <div class="slider-item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
