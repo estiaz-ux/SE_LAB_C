@@ -1,6 +1,7 @@
 <!-- reservation.php -->
 <?php include 'template/header.php';
 include 'dbCon.php';
+<!-- Authentication -->
 if (!isset($_SESSION['isLoggedIn'])) {
     echo '<script>alert("You need to login first.")</script>';
     echo '<script>window.location="login.php"</script>';
