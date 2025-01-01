@@ -1,19 +1,14 @@
 <!-- reservation.php -->
 <?php include 'template/header.php';
-
-                        include 'dbCon.php';
+include 'dbCon.php';
 if (!isset($_SESSION['isLoggedIn'])) {
     echo '<script>alert("You need to login first.")</script>';
     echo '<script>window.location="login.php"</script>';
     }
 ?>
-  
-
   <body>
-    
    <?php include 'template/nav-bar.php'; ?>
     <!-- END nav -->
-    
     <section class="home-slider owl-carousel"  >
       <div class="slider-item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -158,10 +153,8 @@ if (isset($_POST['find'])) {
                         include 'dbCon.php';
   include 'template/header.php'; ?>
   <body>
-    
    <?php include 'template/nav-bar.php'; ?>
     <!-- END nav -->
-    
     <section class="home-slider owl-carousel" >
       <div class="slider-item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -217,9 +210,6 @@ if (isset($_POST['find'])) {
         </div>
       </div>
     </div>
-
-    
-
     <section class="ftco-section bg-light">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
@@ -269,17 +259,12 @@ if (isset($_POST['find'])) {
         </div>
       </div>
     </section>
-
     <?php include 'template/instagram.php'; ?>
-
     <?php include 'template/footer.php'; ?>
-    
     <?php include 'template/script.php'; ?>
-    
   </body>
 </html>
 <?php 
   }else{
-
   }
  ?>
