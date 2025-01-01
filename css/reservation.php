@@ -45,6 +45,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
                     <select data-plugin-selectTwo class="form-control populate" name="area" required=""  style="cursor: pointer;">
                       <option value=""> -Select- </option>
                       <?php 
+                        <!--Location Dropdown-->
                         $con = connect();
                         $sql = "SELECT * FROM `locations`;";
                         $result = $con->query($sql);
@@ -72,7 +73,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
         <div class="row d-flex">
           <div class="col-md-4 ftco-animate img" style="background-image: url(images/bg_1.jpg);"></div>
           <div class="col-md-8 ftco-animate makereservation p-5 bg-light">
-            
+            <!--Reservation Form-->
             <form action="choose-table.php" method="POST">
               <div class="row">
                 <div class="col-md-6">
