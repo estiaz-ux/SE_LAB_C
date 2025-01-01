@@ -22,7 +22,6 @@ if (!isset($_SESSION['isLoggedIn'])) {
         </div>
       </div>
     </section>
-
      <div class="ftco-section-reservation"   >
       <div class="container">
         <div class="row">
@@ -62,7 +61,6 @@ if (!isset($_SESSION['isLoggedIn'])) {
         </div>
       </div>
     </div>
-
     <section class="ftco-section bg-light">
       <div class="container">
         <div class="row no-gutters justify-content-center mb-5 pb-5">
@@ -128,24 +126,12 @@ if (!isset($_SESSION['isLoggedIn'])) {
         </div>
       </div>
     </section>
-
     <?php include 'template/instagram.php'; ?>
-
     <?php include 'template/footer.php'; ?>
-    
     <?php include 'template/script.php'; ?>
-
-
   </body>
 </html>
-
-
-
-
-
-
 <!-- restaurant-list.php -->
-
 <?php 
 if (isset($_POST['find'])) {
   $area_id = $_POST['area'];
