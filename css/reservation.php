@@ -134,7 +134,8 @@ if (!isset($_SESSION['isLoggedIn'])) {
   </body>
 </html>
 <!-- restaurant-list.php -->
-<?php 
+<?php
+<!--Processing the form-->
 if (isset($_POST['find'])) {
   $area_id = $_POST['area'];
 

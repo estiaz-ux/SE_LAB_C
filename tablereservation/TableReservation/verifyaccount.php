@@ -7,9 +7,9 @@ $email = $_GET['email'];
 $auth = $_GET['auth'];
 
 if (isset($_GET['view'])) {
-	# code... 
+	
 	if (isset($_GET['resend'])) {
-		# code...
+		
 		include 'dashboard/mailSender.php'; 
 		$mail->Body = '<html><body>
 			Verify your account.. click the link below.
