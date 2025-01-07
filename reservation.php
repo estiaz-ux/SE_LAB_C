@@ -1,14 +1,11 @@
 <!-- reservation.php -->
 <?php include 'template/header.php';
-
-                        include 'dbCon.php';
+include 'dbCon.php';
 if (!isset($_SESSION['isLoggedIn'])) {
     echo '<script>alert("You need to login first.")</script>';
     echo '<script>window.location="login.php"</script>';
     }
 ?>
-  
-
   <body>
     
    <?php include 'template/nav-bar.php'; ?>
@@ -27,7 +24,6 @@ if (!isset($_SESSION['isLoggedIn'])) {
         </div>
       </div>
     </section>
-
      <div class="ftco-section-reservation"   >
       <div class="container">
         <div class="row">
@@ -133,13 +129,8 @@ if (!isset($_SESSION['isLoggedIn'])) {
         </div>
       </div>
     </section>
-
     <?php include 'template/instagram.php'; ?>
-
     <?php include 'template/footer.php'; ?>
-    
     <?php include 'template/script.php'; ?>
-
-
   </body>
 </html>
