@@ -188,3 +188,124 @@ if (isset($_POST['confirm'])) {
   </body>
 </html>
 
+<?php
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
+    // Include the database connection
+    include 'dbCon.php';
+    $con = connect();
+
+    // Extract submitted data
+    $reservation_name = htmlspecialchars($_POST['reservation_name']);
+    $reservation_phone = htmlspecialchars($_POST['reservation_phone']);
+    $reservation_date = htmlspecialchars($_POST['reservation_date']);
+    $reservation_time = htmlspecialchars($_POST['reservation_time']);
+    $selected_tables = $_POST['table'] ?? [];
+    $selected_chairs = $_POST['chair'] ?? [];
+    $selected_items = $_POST['item'] ?? [];
+    $quantities = $_POST['qty'] ?? [];
+    $transaction_id = htmlspecialchars($_POST['transaction_id']);
+    $total_price = 0;
+
+    // Calculate the total price
+    foreach ($selected_items as $key => $item_id) {
+        $quantity = $quantities[$key];
+        $item_query = $con->prepare("SELECT price FROM menu_item WHERE id = ?");
+        $item_query->bind_param("i", $item_id);
+        $item_query->execute();
+        $item_result = $item_query->get_result()->fetch_assoc();
+        $total_price += $item_result['price'] * $quantity;
+    }
+
+    // Save the booking in the database
+    $insert_booking = $con->prepare("
+        INSERT INTO reservations (name, phone, reservation_date, reservation_time, transaction_id, total_price) 
+        VALUES (?, ?, ?, ?, ?, ?)
+    ");
+    $insert_booking->bind_param(
+        "sssssi",
+        $reservation_name,
+        $reservation_phone,
+        $reservation_date,
+        $reservation_time,
+        $transaction_id,
+        $total_price
+    );
+    $insert_booking->execute();
+
+    // Retrieve the last inserted reservation ID
+    $reservation_id = $con->insert_id;
+
+    // Save table and chair assignments
+    foreach ($selected_tables as $table_id) {
+        $con->query("INSERT INTO reservation_tables (reservation_id, table_id) VALUES ($reservation_id, $table_id)");
+    }
+    foreach ($selected_chairs as $chair_id) {
+        $con->query("INSERT INTO reservation_chairs (reservation_id, chair_id) VALUES ($reservation_id, $chair_id)");
+    }
+
+    // Save ordered items
+    foreach ($selected_items as $key => $item_id) {
+        $quantity = $quantities[$key];
+        $con->query("INSERT INTO reservation_items (reservation_id, item_id, quantity) VALUES ($reservation_id, $item_id, $quantity)");
+    }
+
+    // Close the database connection
+    $con->close();
+    echo "Booking confirmed successfully!";
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <h1>Booking Confirmation</h1>
+    <form action="" method="POST">
+        <label for="reservation_name">Name:</label>
+        <input type="text" id="reservation_name" name="reservation_name" required><br><br>
+
+        <label for="reservation_phone">Phone:</label>
+        <input type="tel" id="reservation_phone" name="reservation_phone" required><br><br>
+
+        <label for="reservation_date">Date:</label>
+        <input type="date" id="reservation_date" name="reservation_date" required><br><br>
+
+        <label for="reservation_time">Time:</label>
+        <input type="time" id="reservation_time" name="reservation_time" required><br><br>
+
+        <label for="transaction_id">Transaction ID:</label>
+        <input type="text" id="transaction_id" name="transaction_id" required><br><br>
+
+        <h3>Select Tables</h3>
+        <input type="checkbox" name="table[]" value="1"> Table 1<br>
+        <input type="checkbox" name="table[]" value="2"> Table 2<br>
+        <input type="checkbox" name="table[]" value="3"> Table 3<br><br>
+
+        <h3>Select Chairs</h3>
+        <input type="checkbox" name="chair[]" value="1"> Chair 1<br>
+        <input type="checkbox" name="chair[]" value="2"> Chair 2<br>
+        <input type="checkbox" name="chair[]" value="3"> Chair 3<br><br>
+
+        <h3>Order Menu Items</h3>
+        <label for="item_1">Item 1 Quantity:</label>
+        <input type="number" id="item_1" name="qty[]" value="0" min="0">
+        <input type="hidden" name="item[]" value="1"><br>
+
+        <label for="item_2">Item 2 Quantity:</label>
+        <input type="number" id="item_2" name="qty[]" value="0" min="0">
+        <input type="hidden" name="item[]" value="2"><br>
+
+        <label for="item_3">Item 3 Quantity:</label>
+        <input type="number" id="item_3" name="qty[]" value="0" min="0">
+        <input type="hidden" name="item[]" value="3"><br><br>
+
+        <button type="submit" name="confirm">Confirm Booking</button>
+    </form>
+</body>
+</html>
+
