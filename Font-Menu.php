@@ -181,3 +181,173 @@
                   </div>
                 </div>
               </div>
+
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <div class="row">
+                  <div class="col-lg-6">
+
+                    <?php 
+                      $sql2 = "SELECT * FROM `menu_item` WHERE food_type = 'Dessert' LIMIT 5";
+                      $result2 = $con->query($sql2);
+                      foreach ($result2 as $r2) {
+                    ?>
+                    <div class="menus d-flex ftco-animate">
+                      <div class="menu-img" style="background-image: url(dashboard/item-image/<?php echo $r2['image']; ?>);"></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3><?php echo $r2['item_name']; ?></h3>
+                          <p><span><?php echo $r2['madeby']; ?></p>
+                        </div>
+                        <div class="one-forth">
+                          <span class="price">Tk<?php echo $r2['price']; ?></span><br> 
+                        </div> 
+                      </div>
+                    </div>
+                    <?php } ?>
+                     <div class="menus d-flex ftco-animate">
+                      <div class="menu-img" style="background-image: url(images/dessert-1.jpg);"></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3>Grilled Beef with potatoes</h3>
+                          <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                        </div>
+                        <div class="one-forth">
+                          <span class="price">Tk290</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="menus d-flex ftco-animate">
+                      <div class="menu-img" style="background-image: url(images/dessert-2.jpg);"></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3>Grilled Beef with potatoes</h3>
+                          <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                        </div>
+                        <div class="one-forth">
+                          <span class="price">Tk399</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="menus d-flex ftco-animate">
+                      <div class="menu-img" style="background-image: url(images/dessert-3.jpg);"></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3>Grilled Beef with potatoes</h3>
+                          <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                        </div>
+                        <div class="one-forth">
+                          <span class="price">Tk 320</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="menus d-flex ftco-animate">
+                      <div class="menu-img" style="background-image: url(images/dessert-4.jpg);"></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3>Grilled Beef with potatoes</h3>
+                          <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                        </div>
+                        <div class="one-forth">
+                          <span class="price">Tk 220</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="menus d-flex ftco-animate">
+                      <div class="menu-img" style="background-image: url(images/dessert-5.jpg);"></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3>Grilled Beef with potatoes</h3>
+                          <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                        </div>
+                        <div class="one-forth">
+                          <span class="price">Tk 280</span>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+
+                  <div class="col-lg-6">
+                  <?php 
+                      $sql2 = "SELECT * FROM `menu_item` WHERE food_type = 'Dessert' LIMIT 5 , 5";
+                      $result2 = $con->query($sql2);
+                      foreach ($result2 as $r2) {
+                    ?>
+                    <div class="menus d-flex ftco-animate">
+                      <div class="menu-img" style="background-image: url(dashboard/item-image/<?php echo $r2['image']; ?>);"></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3><?php echo $r2['item_name']; ?></h3>
+                          <p><span><?php echo $r2['madeby']; ?></p>
+                        </div>
+                                            
+                        <span class="price">Tk
+                          
+                          <?php echo $r2['price']; ?></span><br> 
+                       </div> 
+                        </div>
+                      </div>
+                      <?php } ?>
+                      <div class="menus d-flex ftco-animate">
+                        <div class="menu-img" style="background-image: url(images/dessert-6.jpg);"></div>
+                        <div class="text d-flex">
+                          <div class="one-half">
+                            <h3>Tiramisu</h3>
+                            <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                          </div>
+                          <div class="one-forth">
+                            <span class="price">Tk199</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="menus d-flex ftco-animate">
+                        <div class="menu-img" style="background-image: url(images/dessert-7.jpg);"></div>
+                        <div class="text d-flex">
+                          <div class="one-half">
+                            <h3>Chocolate Cream</h3>
+                            <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                          </div>
+                          <div class="one-forth">
+                            <span class="price">Tk190</span>
+                          </div>
+                        </div>
+                      </div> <div class="one-forth">
+                      <div class="menus d-flex ftco-animate">
+                        <div class="menu-img" style="background-image: url(images/dessert-8.jpg);"></div>
+                        <div class="text d-flex">
+                          <div class="one-half">
+                            <h3>Pizza Pie</h3>
+                            <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                          </div>
+                          <div class="one-forth">
+                            <span class="price">Tk220</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="menus d-flex ftco-animate">
+                        <div class="menu-img" style="background-image: url(images/dessert-9.jpg);"></div>
+                        <div class="text d-flex">
+                          <div class="one-half">
+                            <h3>Sicilian Ricotta</h3>
+                            <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                          </div>
+                          <div class="one-forth">
+                            <span class="price">Tk290</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="menus d-flex ftco-animate">
+                        <div class="menu-img" style="background-image: url(images/dessert-10.jpg);"></div>
+                        <div class="text d-flex">
+                          <div class="one-half">
+                            <h3>Mango FLoat</h3>
+                            <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                          </div>
+                          <div class="one-forth">
+                            <span class="price">Tk240</span>
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+  
